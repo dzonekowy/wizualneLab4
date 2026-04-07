@@ -30,5 +30,53 @@ namespace WinFormsApp1
                 }
             }
         }
+
+        private void rotateBtn_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please load an image first.");
+                return;
+            }
+            else if (radioButton1.Checked)
+            {
+                rotateImage90();
+            } 
+            else if (radioButton2.Checked)
+            {
+                rotateImage180();
+            }
+            else if (radioButton3.Checked)
+            {
+                rotateImage270();
+            }
+        }
+
+        private void rotateImage90()
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void rotateImage180()
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void rotateImage270()
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                pictureBox1.Refresh();
+            }
+        }
     }
 }
