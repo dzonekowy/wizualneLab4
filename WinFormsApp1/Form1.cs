@@ -127,5 +127,30 @@ namespace WinFormsApp1
                 }
             }
         }
+
+        private void grnBtn_Click(object sender, EventArgs e)
+        {
+            onlyGreen();
+        }
+
+        private void onlyGreen()
+        {
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Please load an image first.");
+                return;
+            }
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    Color pixelColor = bmp.GetPixel(x, y);
+                    Color greenPixel = Color.FromArgb(0, pixelColor.G, 0);
+                    bmp.SetPixel(x, y, greenPixel);
+                }
+            }
+            pictureBox1.Image = bmp;
+        }
     }
 }

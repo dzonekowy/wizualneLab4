@@ -36,6 +36,7 @@
             rotateBtn = new Button();
             invBtn = new Button();
             updBtn = new Button();
+            grnBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -120,11 +121,22 @@
             updBtn.UseVisualStyleBackColor = true;
             updBtn.Click += updBtn_Click;
             // 
+            // grnBtn
+            // 
+            grnBtn.Location = new Point(39, 231);
+            grnBtn.Name = "grnBtn";
+            grnBtn.Size = new Size(75, 23);
+            grnBtn.TabIndex = 2;
+            grnBtn.Text = "OnlyGreen";
+            grnBtn.UseVisualStyleBackColor = true;
+            grnBtn.Click += grnBtn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(566, 332);
+            Controls.Add(grnBtn);
             Controls.Add(updBtn);
             Controls.Add(invBtn);
             Controls.Add(rotateBtn);
@@ -150,5 +162,6 @@
         private Button rotateBtn;
         private Button invBtn;
         private Button updBtn;
+        private Button grnBtn;
     }
 }
